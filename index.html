@@ -1,96 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/png" href="images/pc.ico" />
-        <title>Visualization of Sorting Algorithms</title>
-        <script src="script/jquery-3.4.1.min.js"></script>
-        <link rel="stylesheet" href="styles/style.css" />
-        <link rel="stylesheet" href="styles/interface.css" />
-    </head>
-    <body>
-        <a id="repository" href="https://github.com/polcats/VisualSort" target="_blank">
-            <!-- <img src="images/github.png" alt="GitHub" title="Visit Repository" /> -->
-        </a>
-        <div id="menu">
-            <div id="sliders">
-                <div class="slider">
-                    <label for="speed">Tốc độ</label>
-                    <input class="slider-input" name="speed" id="speed" type="range" min="1" max="100" value="51" />
-                    <span class="count" id="speed-count">0</span>
-                </div>
 
-                <div class="slider">
-                    <label for="elements">Số phần tử mảng</label>
-                    <input class="slider-input" name="elements" id="elements" type="range" min="5" max="30" value="5" />
-                    <span class="count" id="element-count">0</span>
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/pc.ico" />
+    <title>Insertion Sort</title>
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/interface.css" />
+</head>
+
+<body>
+    <a id="repository" href="https://github.com/polcats/VisualSort" target="_blank">
+    </a>
+    <div id="menu">
+        <div id="sliders">
+            <div class="slider">
+                <label for="speed">Tốc độ</label>
+                <input class="slider-input" name="speed" id="speed" type="range" min="1" max="100" value="51" />
+                <span class="count" id="speed-count">0</span>
             </div>
-            <div id="algos">
-                <select id="algorithms" style="display: none;">
-                    <option value="insertion">Insertion Sort</option>
-                </select>
-            </div>
-            <div id="sort-order">
-                <label>Sắp xếp</label>
-                <select id="order">
-                    <option value="asc">Tăng dần</option>
-                    <option value="desc">Giảm dần</option>
-                </select>
-            </div>
-            <div id="buttons">
-                <input type="button" id="sort" class="sort green" value="Sắp xếp" />
-                <input type="button" id="stop" value="Dừng" disabled />
-                <input type="button" id="reset" class="green" value="Sắp xếp lại" />
+
+            <div class="slider">
+                <label for="elements">Số phần tử mảng</label>
+                <input class="slider-input" name="elements" id="elements" type="range" min="5" max="30" value="5" />
+                <span class="count" id="element-count">0</span>
             </div>
         </div>
-        <div id="algo-info">
-            <div id="insertion-info" >
-                <h2 class="algo-header">Sắp xếp Chèn</h2>
-                <span class="algo-details">
-                    <ul>
-<h4>for (i = 1; i < n; i++){</h4>
-                    <h4> key = arr[i];</h4>
-                    <h4>j = i-1; </h4>
-                    <h4>while (j >= 0 && arr[j] > key){</h4>
-                    <h4>arr[j+1] = arr[j];</h4>
-                    <h4>j = j-1;</h4>
-                    <h4> }</h4>
-                    <h4>arr[j+1] = key;</h4>
-                    <h4> }</h4>
-                    <h4>}</h4>
-
-                    </ul>
-                    
-
-                    
-                </span>
-                <span class="algo-complexity">
-                    <ul>
-                        <li class="algo-info"><span class="complexity-item">Worst Complexity : </span><span class="complexity-value">N ^ 2</span></li>
-                        <li class="algo-info">
-                            <span class="complexity-item">Average Complexity : </span><span class="complexity-value">N ^ 2</span>
-                        </li>
-                        <li class="algo-info"><span class="complexity-item">Best Complexity : </span><span class="complexity-value">N</span></li>
-                        <li class="algo-info"><span class="complexity-item">Space Complexity : </span><span class="complexity-value">1</span></li>
-                        <li class="algo-info"><span class="complexity-item">Method : </span><span class="complexity-value">Insertion</span></li>
-                        <li class="algo-info"><span class="complexity-item">Stable : </span><span class="complexity-value">Yes</span></li>
-                    </ul>
-                </span>
-            </div>
+        <div id="algos">
+            <select id="algorithms" style="display: none;">
+                <option value="insertion">Insertion Sort</option>
+            </select>
         </div>
-        <div id="container"><div id="bars"></div></div>
+        <div id="sort-order">
+            <label>Sắp xếp</label>
+            <select id="order">
+                <option value="asc">Tăng dần</option>
+                <option value="desc">Giảm dần</option>
+            </select>
+        </div>
+        <div id="buttons">
+            <input type="button" id="sort" class="sort green" value="Sắp xếp" />
+            <input type="button" id="stop" value="Dừng" disabled />
+            <input type="button" id="reset" class="green" value="Sắp xếp lại" />
+        </div>
+    </div>
+    <div id="algo-info">
+        <div id="insertion-info">
+            <h2 class="algo-header">Sắp xếp Chèn</h2>
+            <span class="algo-details">
+                <pre>
+for (let i = 1; i < n; i++){
+    let key = arr[i];
+    j = i-1;
+    while (let j >= 0 && arr[j] > key){
+        arr[j+1] = arr[j];
+        j = j-1;
+    }
+    arr[j+1] = key;
+}
+                    </pre>
+            </span>
+            <span class="algo-complexity">
+                <h2 class="algo-header">Đánh giá thuật toán</h2>
 
-        <script>
-            const CONTAINER_WIDTH = 600;
-            let TOTAL_ELEMENTS = document.getElementById("elements").value;
-            let SPEED = document.getElementById("speed").value;
-            let container = document.getElementById("bars");
-            let bars = document.getElementsByClassName("bar");
-        </script>
+                <ul>
+                    <li class="algo-info"><span class="complexity-item">Trường hợp tốt: </span><span
+                            class="complexity-value">O(n)</span></li>
+                    <li class="algo-info">
+                        <span class="complexity-item">Trung bình: </span><span class="complexity-value">O(n^2)</span>
+                    </li>
+                    <li class="algo-info"><span class="complexity-item">Trường hợp xấu: </span><span
+                            class="complexity-value">O(n^2)</span></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+    <div id="container">
+        <div id="bars"></div>
+    </div>
 
-        <script src="script/interface.js" ></script>
-        <script src="script/animation.js"></script>
-        <script src="script/algorithms.js"></script>
-    </body>
+    <script>
+        const CONTAINER_WIDTH = 600;
+        let TOTAL_ELEMENTS = document.getElementById("elements").value;
+        let SPEED = document.getElementById("speed").value;
+        let container = document.getElementById("bars");
+        let bars = document.getElementsByClassName("bar");
+    </script>
+
+    <script src="script/interface1.js"></script>
+    <script src="script/animation1.js"></script>
+    <script src="script/algorithms1.js"></script>
+</body>
+
 </html>

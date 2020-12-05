@@ -38,8 +38,10 @@ a#repository img {
     padding: 25px;
     text-align: justify;
     text-indent: 5px;
-    line-height: 4px;
-    font-weight: bold;
+    line-height: 15px;
+    font-size: 14px;
+    background: linear-gradient(#be93c5,#7bc6cc);
+    /* font-weight: bold; */
 }
 
 #algo-info .algo-complexity {
@@ -97,7 +99,8 @@ a#repository img {
 }
 
 #menu {
-    background:linear-gradient(#4568DC,#B06AB3);
+    background: whitesmoke;
+    /* background:linear-gradient(#4568DC,#B06AB3); */
     grid-area: menu;
     display: grid;
     grid-template-areas: "sliders algos buttons" "sliders sort-order buttons";

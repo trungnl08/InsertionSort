@@ -133,6 +133,3 @@ html body div input[disabled] {
     opacity: 0.5;
     cursor: not-allowed !important;
 }
-.algo-details{
-    line-height: 1px;
-}
